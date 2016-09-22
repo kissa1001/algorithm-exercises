@@ -4,7 +4,6 @@
 
 //Using .slice()
 function chunkArrayInGroups(arr, size) {
-  arr = arr.slice();
   var arr2 = [];
   for(var i = 0, len = arr.length; i < len; i+=size) {
     arr2.push(arr.slice(0, size));
