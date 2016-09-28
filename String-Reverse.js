@@ -27,10 +27,10 @@ function reverse(string) {
 }
 //With function recursion
 function reverse(string) {
-  function rev(string, len, result) {
-    return (len === 0) ? result : rev(string, --len, (result += string[len]));
-  };
-  return rev(string, string.length, '');
+  if(str.length <= 1){
+    return str;
+  } 
+    return reverseString(str.substring(1)) + str.charAt(0);
 }
 
 //Python
