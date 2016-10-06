@@ -7,8 +7,9 @@
 //With for loop
 function reverse(string) {
   var result = '';
-  for (var i = string.length - 1; i >= 0; i--)
+  for(var i = string.length - 1; i >= 0; i--){
     result += string[i];
+  }
   return result;
 }
 //With while loop 
@@ -27,10 +28,10 @@ function reverse(string) {
 }
 //With function recursion
 function reverse(string) {
-  if(str.length <= 1){
-    return str;
+  if(string.length <= 1){
+    return string;
   } 
-    return reverseString(str.substring(1)) + str.charAt(0);
+  return reverse(string.substring(1)) + string.charAt(0);
 }
 
 //Python
