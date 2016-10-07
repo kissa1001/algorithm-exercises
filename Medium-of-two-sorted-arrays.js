@@ -73,13 +73,14 @@ function findMedian(A, B) {
   if (B.length === 1) {
     return findMedianOfArrayAndValue(A, B[0]);
   }
+
   if (A.length === 2 && B.length >= 2 && B.length % 2 === 0) {
-    if (areValuesInMiddleOfEvenArray(B, A[0], A[1])) {
+    if (A[0] > B[Math.floor(B.length / 2) - 1] && A[1] < B[Math.floor(B.length / 2)]) {
       return (A[0] + A[1]) / 2;
     }
   }
   if (B.length === 2 && A.length >= 2 && A.length % 2 === 0) {
-    if (areValuesInMiddleOfEvenArray(A, B[0], B[1])) {
+    if (B[0] > A[Math.floor(A.length / 2) - 1] && B[1] < A[Math.floor(A.length / 2)]) {
       return (B[0] + B[1]) / 2;
     }
   }
