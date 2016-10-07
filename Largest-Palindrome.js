@@ -36,7 +36,7 @@ function longestPalindrome(string) {
     }
   }
   return longest;
-};
+}
 
 //Method 2: Find all possible substrings in string and check if palindrome.
 function longestPalindrome(string){
