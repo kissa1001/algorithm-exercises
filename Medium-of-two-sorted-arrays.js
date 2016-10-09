@@ -97,7 +97,8 @@ function findMedian(A, B) {
   if (medianA < medianB) {
     A.splice(0, maxDiscardable);
     B.splice(B.length - maxDiscardable);
-  } else {
+  }
+  else {
     A.splice(A.length - maxDiscardable);
     B.splice(0, maxDiscardable);
   }
