@@ -1,5 +1,5 @@
-//Given an array of positive integers. 
-//All numbers occur even number of times except one number which occurs odd number of times. 
+//Given an array of positive integers.
+//All numbers occur even number of times except one number which occurs odd number of times.
 //Find the number!
 
 // Example:
@@ -26,10 +26,10 @@ function getOddOccurrence(arr){
 	var numbers = {};
 	arr.forEach( function(num){
 		if(!numbers[num]){
-			numbers[num] = 0
+			numbers[num] = 0;
 		}
 		numbers[num] += 1;
-	})
+	});
 	for( var occ in numbers){
 		if(numbers[occ] % 2 !== 0){
 			return parseInt(occ);
@@ -51,4 +51,3 @@ def getOddOccurrence(arr):
     for element in arr:
         res = res ^ element
     return res
-

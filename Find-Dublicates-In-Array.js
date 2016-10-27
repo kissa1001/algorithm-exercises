@@ -4,7 +4,7 @@
 // O/P = [1, 2]
 
 //Javascript
-//using forEach. Time com­plex­ity : O(n) 
+//using forEach. Time : O(n) 
 function findDublicate(arr){
 	var result = [];
 	arr.forEach(function(number, index){
@@ -27,4 +27,3 @@ function findDublicate(arr){
 	}
 	return result;
 }
-

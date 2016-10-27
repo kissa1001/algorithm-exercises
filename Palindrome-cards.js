@@ -1,14 +1,14 @@
 //Problem
 // You are given a set of cards. Each card has a string written on the front and a number on the back.
-// The strings on all the cards have the same length. 
-// You must choose some of these cards (at least one, possibly all) 
-// and place them in a row with the front sides visible, 
+// The strings on all the cards have the same length.
+// You must choose some of these cards (at least one, possibly all)
+// and place them in a row with the front sides visible,
 // such that the concatenated string is a palindrome
-// You are given a list of strings "front" 
-// and a list of numbers "back" describing the set of cards you are given. 
+// You are given a list of strings "front"
+// and a list of numbers "back" describing the set of cards you are given.
 // The i-th card has front[i] written on the front and back[i] on the back
 
-// Find the maximum possible score you can achieve with these cards. 
+// Find the maximum possible score you can achieve with these cards.
 // Score is obtained by summing up all the "back" values that were used
 
 // Sample Input
@@ -23,13 +23,13 @@
 //Helper functions
 function isPalindrome(str1, str2){
   if (str1 === str2.split('').reverse().join('')) {
-     return true
+     return true;
   }
-} 
+}
 
 function isPalindromeByItself(str){
   if (str === str.split('').reverse().join('')) {
-     return true
+     return true;
   }
 }
 
@@ -53,7 +53,7 @@ function processData(input) {
   }); // => [{front: 'abc', value: 1}, {front: 'cba', value: 2}, ...]
   var highestScore;
   var scores = [];
-  
+
   // For every card find all the cards that are its palindromes.
   // goal => {'abc': [{front: 'cba', value: 2}],
   //          'cba': [{front: 'abc', value: 1}],
@@ -61,21 +61,21 @@ function processData(input) {
   var matches = {};
   var sum = 0;
   var highest, lowest, finalSum;
-  
+
   var keyArr = [];
   cards.forEach(function(card){
     var key = card.front;
     matches[key] = cards.filter(function(card){
       return isPalindrome(card.front, key);
     });
-  })
-  //for every key in matches, find the card with the highest value 
+  });
+  //for every key in matches, find the card with the highest value
   //i.e [ { front: 'cba', back: 7 }, { front: 'cba', back: 40 } ] => 40
   //or if its palindrome of itself, just take sum of them all
-  //i.e [ { front: 'aba', back: 7 }, { front: 'aba', back: 40 } ] => 47 
+  //i.e [ { front: 'aba', back: 7 }, { front: 'aba', back: 40 } ] => 47
   //as aba aba =>palindrome
   console.log(matches);
-  for(var key in matches){   
+  for(var key in matches){
    if (matches.hasOwnProperty(key)){
       if(matches[key].length > 1){
         //if palindrome by itself but not same characters
@@ -108,11 +108,11 @@ function processData(input) {
     }
    }
   return sum;
- } 
+ }
 
 //Tests
 var input1 = [["abc","cba","def","abc","fed"],[24,7,63,222,190]];
-var input2 = [["a"],[1]]; 
+var input2 = [["a"],[1]];
 var input3 = [["xyx","xyx","xyx","zzz","zzz","zzz"],[5,7,2,1,6,4]];
 var input4 = [["aaaaaaaaaaaa","nopalindrome","steponnopets","emordnilapon","aaaaaaaaaaaa","steponnopets","nopalindrome","steponnopets","nopalindrome","bbbbbbbbbbbb","cannotbeused","cannotbeused","steponnopets","aaaaaaaaaaaa","nopalindrome","aaaaaaaaaaaa","nopalindrome","emordnilapon","steponnopets","nopalindrome"],[4096,131072,64,262144,512,1024,65536,2048,32768,1,524288,16384,32,4,16,2,8,128,8192,256]];
 var input5 = [["thequickbrownfoxjumpsoverthelazydog"],[1000000]];

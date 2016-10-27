@@ -1,6 +1,6 @@
-//Confirm the Ending 
-Input: "He has to give me a new name", "name"
-Output: true
+//Confirm the Ending
+//Input: "He has to give me a new name", "name"
+//Output: true
 
 //Using for loop
 

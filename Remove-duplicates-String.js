@@ -16,7 +16,7 @@ function removeDuplicates(data){
     isIn=0;
     for(var j = 0; j < newArr.length; j++){
       if(temp[i] == newArr[j]){
-        isIn=1;
+        isIn = 1;
       }
     }
     if(isIn === 0){
